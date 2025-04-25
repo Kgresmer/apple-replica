@@ -1,10 +1,15 @@
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Highlights from "./components/Highlights.jsx";
 
 const App = () => {
 
   return (
-    <h1 className="text-3xl font-bold underline">
-        Kevin's Apple Site
-    </h1>
+    <main children="bg-black">
+        <Navbar/>
+        <Hero/>
+        <Highlights />
+    </main>
   )
 }
 
