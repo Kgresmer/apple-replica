@@ -6,9 +6,9 @@ const App = () => {
 
   return (
     <main children="bg-black">
-        <Navbar/>
-        <Hero/>
-        <Highlights />
+      <Navbar/>
+      <Hero/>
+      <Highlights/>
     </main>
   )
 }
