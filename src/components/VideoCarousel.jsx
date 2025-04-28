@@ -21,7 +21,7 @@ const VideoCarousel = () => {
     gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
-      ease: "power2.inOut", // show visualizer https://gsap.com/docs/v3/Eases
+      ease: "power2.inOut",
     });
 
     gsap.to('#video', {
@@ -106,8 +106,11 @@ const VideoCarousel = () => {
         setVideo((prevVideo) => ({...prevVideo, isLastVideo: false, videoId: 0}));
         break;
       case "play":
+      case "pause":
         setVideo((prevVideo) => ({...prevVideo, isPlaying: !prevVideo.isPlaying}));
         break;
+      default:
+        return video;
     }
   }
 
@@ -121,7 +124,11 @@ const VideoCarousel = () => {
               playsInline={true}
               preload="auto"
               muted
+              className={`${list.id === 2 && 'translate-x-44'} pointer-events-none`}
               ref={(el) => (videoRef.current[i] = el)}
+              onEnded={() => i !== 3 ?
+                handleProcess('video-end', i) :
+                handleProcess('video-last')}
               onPlay={() => {
                 setVideo(prevVideo => ({
                   ...prevVideo, isPlaying: true
