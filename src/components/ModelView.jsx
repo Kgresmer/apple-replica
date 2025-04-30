@@ -1,4 +1,4 @@
-import {Html, OrbitControls, PerspectiveCamera, View} from "@react-three/drei";
+import {OrbitControls, PerspectiveCamera, View} from "@react-three/drei";
 import Lights from "./Lights.jsx";
 import {Suspense} from "react";
 import {IPhone} from "./IPhone.jsx";
@@ -20,7 +20,7 @@ const ModelView = ({
           id={gsapType}
           className={`w-full h-full absolute ${index === 2 ? 'right-[-100%]' : ''}`}>
       {/* Ambient Light */}
-      <ambientLight intensity={0.3}/>
+      <ambientLight intensity={0.9}/>
 
       <PerspectiveCamera makeDefault position={[0, 0, 4]}/>
       <Lights/>
