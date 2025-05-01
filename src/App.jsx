@@ -5,6 +5,7 @@ import Model from "./components/Model.jsx";
 import * as Sentry from "@sentry/react";
 import Features from "./components/Features.jsx";
 import HowItWorks from "./components/HowItWorks.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
       <Model />
       <Features />
       <HowItWorks />
+      <Footer />
     </main>
   )
 }
